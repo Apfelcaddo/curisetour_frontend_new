@@ -5,7 +5,10 @@ export interface Tour {
     name: string;
     description: string;
     price: number;
-    // Add other relevant fields
+    duration: string;
+    imageUrl: string;
+    createdAt: string;
+    updatedAt: string;
   }
   
   export interface TourResponse {

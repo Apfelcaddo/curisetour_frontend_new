@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Tour } from '../../types';
 import { getTours, deleteTour } from '../../services/tourService';
 import { Link } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
+import {useAuth} from '../../hooks/useAuth';
 import { ROLES } from '../../utils/constants';
 
 interface TourListProps {
@@ -45,6 +45,9 @@ const TourList: React.FC<TourListProps> = ({ isAdmin = false }) => {
           <button>Create New Tour</button>
         </Link>
       )}
+              <Link to="/tours/create">
+          <button>Create New Tour</button>
+        </Link>
       <ul>
         {tours.map((tour) => (
           <li key={tour.id}>

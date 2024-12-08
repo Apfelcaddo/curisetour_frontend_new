@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { register } from '../../services/authService';
 import { AuthResponse, RegisterData, UserRole } from '../../types';
-import useAuth from '../../hooks/useAuth';
+import {useAuth} from '../../hooks/useAuth';
 import styles from './styles/Register.module.css';
 
 const Register: React.FC = () => {

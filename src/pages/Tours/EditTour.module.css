@@ -1,0 +1,28 @@
+/* src/pages/Tours/EditTour.module.css */
+
+.container {
+    padding: 20px;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  

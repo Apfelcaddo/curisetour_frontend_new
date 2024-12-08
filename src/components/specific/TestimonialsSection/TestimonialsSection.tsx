@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     image: testimonial3,
     name: 'Emily Johnson',
     review:
-      'Luxury and comfort combined with exciting adventures. Highly recommend [Your Company Name] for your next vacation.',
+      'Luxury and comfort combined with exciting adventures. Highly recommend NYU Cruise Line for your next vacation.',
   },
 ];
 

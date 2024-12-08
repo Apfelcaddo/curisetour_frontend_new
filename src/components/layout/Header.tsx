@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import logo from '../../assets/images/logo.png'; // Ensure this path is correct
-import useAuth from '../../hooks/useAuth';
+import {useAuth} from '../../hooks/useAuth'; // Named import using curly braces
 import { ROLES } from '../../utils/constants'; // Assuming you have defined roles in constants
 
 const Header: React.FC = () => {

@@ -12,7 +12,7 @@ const AboutSection: React.FC = () => {
       <div className={styles.content}>
         <h2>About Us</h2>
         <p>
-          At [Your Company Name], we are committed to delivering exceptional cruise experiences. Our dedicated team ensures that every journey is comfortable, luxurious, and filled with unforgettable moments.
+          At NYU Cruise Line, we are committed to delivering exceptional cruise experiences. Our dedicated team ensures that every journey is comfortable, luxurious, and filled with unforgettable moments.
         </p>
         <p>
           Whether you're seeking relaxation, adventure, or exploration, our diverse range of tours caters to all preferences, promising an unparalleled voyage every time.

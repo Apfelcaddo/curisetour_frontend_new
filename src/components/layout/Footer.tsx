@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className={styles.copy}>
-        &copy; {new Date().getFullYear()} [Your Company Name]. All rights reserved.
+        &copy; {new Date().getFullYear()} [NYU Cruise Line]. All rights reserved.
       </div>
     </footer>
   );
