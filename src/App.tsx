@@ -1,35 +1,92 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Home from './pages/Home/Home';
+import styles from "./Home/styles/home.module.css";
+import ForgotPassword from './pages/Auth/ForgotPassword';
+import Login from './pages/Auth/Login';
+import Emplogin from './pages/Auth/EmpLogin'
+import Register from './pages/Auth/Register';
+import CustomerDashboard from './pages/Dashboard/CustomerDashboard';
+import EmployeeDashboard from './pages/Dashboard/EmployeeDashboard';
+import TourList from './pages/Tours/TourList';
 
-function App() {
-  const [count, setCount] = useState(0)
+// import CreateTour from './pages/Tours/CreateTour';
+// import EditTour from './pages/Tours/EditTour';
+import Unauthorized from './pages/Unauthorized'; // Updated path
+// import UserProfile from './pages/Profile/UserProfile';
+import ProtectedRoute from './components/common/ProtectedRoute';
+import { ROLES } from './utils/constants';
 
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <Header />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/EmpLogin" element={<Emplogin />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
-export default App
+        {/* Unauthorized Access Route */}
+        <Route path="/unauthorized" element={<Unauthorized />} />
+
+        {/* Protected Routes */}
+        <Route
+          path="/dashboard/customer"
+          element={
+            <ProtectedRoute roles={[ROLES.CUSTOMER]}>
+              <CustomerDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/employee"
+          element={
+            <ProtectedRoute roles={[ROLES.EMPLOYEE]}>
+              <EmployeeDashboard />
+            </ProtectedRoute>
+          }
+        />
+        
+        {/* <Route
+          path="/tours/create"
+          element={
+            <ProtectedRoute roles={[ROLES.EMPLOYEE]}>
+              <CreateTour />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/tours/edit/:id"
+          element={
+            <ProtectedRoute roles={[ROLES.EMPLOYEE]}>
+              <EditTour />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <UserProfile />
+            </ProtectedRoute>
+          }
+        /> */}
+
+        {/* Public Route Example */}
+        <Route path="/tours" element={<TourList />} />
+
+        {/* Fallback Route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+};
+
+export default App;

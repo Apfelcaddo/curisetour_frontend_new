@@ -1,0 +1,51 @@
+/* src/components/specific/AboutSection/styles.module.css */
+.about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 80px 20px;
+    
+  }
+  
+  .imageContainer {
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .content {
+    max-width: 600px;
+    margin-left: 40px;
+  }
+  
+  .content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #003366;
+  }
+  
+  .content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .content {
+      margin-left: 0;
+      margin-top: 30px;
+    }
+  }

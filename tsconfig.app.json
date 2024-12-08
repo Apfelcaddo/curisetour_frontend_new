@@ -21,6 +21,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
+    /* Enable Incremental Compilation */
+    "incremental": true
   },
   "include": ["src"]
 }

@@ -1,0 +1,40 @@
+/* src/components/specific/CTASection/styles.module.css */
+.cta {
+    padding: 80px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .ctaButton {
+    padding: 15px 30px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .ctaButton:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .cta {
+      padding: 60px 20px;
+    }
+  }
